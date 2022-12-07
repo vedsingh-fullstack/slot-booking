@@ -1,24 +1,81 @@
-# README
+# vedsingh-fullstack/slot-booking-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+This instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* Ruby version
+### Prerequisites
+- [PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-macos)
 
-* System dependencies
+### Installation
 
-* Configuration
+Download this repository or clone it using git
 
-* Database creation
+```
+git clone https://github.com/vedsingh-fullstack/slot-booking.git
+```
 
-* Database initialization
+Navigate into the repository
 
-* How to run the test suite
+```
+cd slot-booking
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+#### 1. Database Configuration
+Configure a postgres database before running the backend
 
-* Deployment instructions
+```sh
+brew install postgresql@14
+```
+Your Postgres server should ideally run as a service on your machine, in order
+to have it running after system start:
+```sh
+brew services start postgresql@14
+```
 
-* ...
+After cloning application repository and installing app you will have two additional databases: optisure_test and optisure_development
+For these databases you will need to create new user so connection will be
+possible:
+```sh
+psql postgres
+```
+```sql
+CREATE ROLE testuser WITH SUPERUSER;
+ALTER ROLE testuser WITH LOGIN;
+ALTER ROLE testuser WITH PASSWORD 'admin@123';
+
+
+#### 2. Create and setup the database
+```sh
+
+rails db:create
+rails db:migrate
+rails db:seeds
+
+```
+
+#### 3. Start the Rails server
+
+You can start the rails server using the command given below.
+```sh
+bundle exec rails s
+```
+
+And now you can test the api with the following URL
+
+List of available Slots
+
+```sh
+GET http://localhost:3000/api/v1/available-slots?date=2022-02-02T20:00:00.000Z&interval=15
+```
+
+Create Appointment with selected slots
+
+```sh
+POST http://localhost:3000/api/v1/appointments
+
+{
+    start: "2022-02-02T20:00:00.000Z",
+    end: "2022-02-02T22:30:00.000Z"
+}
+```

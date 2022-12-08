@@ -1,4 +1,5 @@
-# vedsingh-fullstack/slot-booking-api
+# Slot Booking App
+- [Approach](https://miro.com/app/board/uXjVP8aX6yo=/)
 
 ## Getting Started
 
@@ -46,7 +47,8 @@ ALTER ROLE testuser WITH PASSWORD 'admin@123';
 
 
 #### 2. Create and setup the database
-```sh
+
+```
 
 rails db:create
 rails db:migrate
@@ -78,4 +80,18 @@ POST http://localhost:3000/api/v1/appointments
     start: "2022-02-02T20:00:00.000Z",
     end: "2022-02-02T22:30:00.000Z"
 }
+```
+
+#### 4. Start the react server
+
+
+```sh
+npm start
+```
+
+#### 5. Enable cors
+Allow cors for react server in config/initializers/cors.rb  
+
+```sh
+origins 'http://localhost:3001'
 ```

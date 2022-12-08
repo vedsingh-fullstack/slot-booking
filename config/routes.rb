@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :appointments, only: %i[create update]
+      resources :appointments, only: %i[create]
       get 'available-slots', to: 'appointments#available_slots'
     end
   end

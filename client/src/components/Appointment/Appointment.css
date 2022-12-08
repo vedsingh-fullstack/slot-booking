@@ -1,0 +1,7 @@
+.react-datepicker-popper {
+    transform: translate(275px, 146px) !important
+}
+
+.slot-booking .datepicker {
+    margin-bottom: 10px;
+}

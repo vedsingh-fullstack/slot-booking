@@ -5,7 +5,9 @@ require_relative '../helpers/datetime_helpers'
 module AppointmentService
   class << self
     include DateTimeHelper
-    def available_slots(date, interval)
+    def available_slots(date, interval = 15)
+      return [] if date.blank?
+
       date = Time.parse(date).utc
       # find the booked record from db
       already_booked_slots = Appointment.where(start: date.beginning_of_day..date.end_of_day)

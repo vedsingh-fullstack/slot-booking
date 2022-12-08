@@ -86,6 +86,7 @@ POST http://localhost:3000/api/v1/appointments
 
 
 ```sh
+cd client
 npm start
 ```
 

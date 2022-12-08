@@ -1,4 +1,4 @@
-# Slot Booking App
+# Slot Booking App(Sample Application built using rails and react)
 - [Approach](https://miro.com/app/board/uXjVP8aX6yo=/)
 
 ## Getting Started

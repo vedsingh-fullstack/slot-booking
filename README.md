@@ -45,11 +45,11 @@ CREATE ROLE testuser WITH SUPERUSER;
 ALTER ROLE testuser WITH LOGIN;
 ALTER ROLE testuser WITH PASSWORD 'admin@123';
 
+```
 
 #### 2. Create and setup the database
 
 ```
-
 rails db:create
 rails db:migrate
 rails db:seeds

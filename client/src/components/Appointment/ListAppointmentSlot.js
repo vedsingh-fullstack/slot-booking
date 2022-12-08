@@ -5,7 +5,7 @@ function ListAppointmentSlot(props) {
   return (
     <div>
       <h2> Your available slots</h2>
-      <div>
+      <div className='list-slot'>
         {props.slots.map((slot) => {
           return <div className='slots'>
             <p>{slot}</p>

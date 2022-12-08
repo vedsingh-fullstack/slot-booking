@@ -1,7 +1,32 @@
 .react-datepicker-popper {
-    transform: translate(275px, 146px) !important
+    transform: translate(422px, 166px) !important
 }
 
 .slot-booking .datepicker {
     margin-bottom: 10px;
+}
+
+.list-slot {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-slot .slots {
+    flex: 1 0 21%;
+    margin: 5px;
+    height: 100px;
+    background-color: #ccffff;
+}
+
+.slot-booking-header {
+    display: flex;
+    margin: 0 0px 58px 163px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+
+.slot-interval-input {
+    margin-bottom: 12px;
 }

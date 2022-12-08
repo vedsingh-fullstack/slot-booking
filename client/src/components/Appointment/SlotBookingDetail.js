@@ -28,16 +28,24 @@ function SlotBookingDetail() {
 
   return (
     <div className="slot-booking">
-      <h2> Choose time slot</h2>
-      <div className="datepicker">
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
-      </div>
+      <div className="slot-booking-header">
+        <div className="datepicker">
+          <h3> Choose time slot</h3>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
+        </div>
+        <div className="slot-interval-input">
+          <h3>
+            Select Interval:
+          </h3>
+          <input type="text" name="interval" className="input-text" />
 
+        </div>
+      </div>
       <button onClick={handleClick}>Select Slot</button>
-      <ListAppointmentSlot slots={slots}/>
+      <ListAppointmentSlot slots={slots} />
     </div>
   )
 }
